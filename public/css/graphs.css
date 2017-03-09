@@ -1,0 +1,163 @@
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:400+700);
+body {
+  background: #30303A;
+  font-family: Roboto;
+}*/
+#chart {
+  width: 650px;
+  height: 300px;
+  margin: 50px auto;
+  display: block;
+}
+#chart #numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+#chart #numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 29px;
+  /* border-bottom: 1px solid #444; */
+  position: relative;
+  bottom: 30px;
+  top: -15px;
+}
+#chart #numbers li:last-child {
+  height: 30px;
+}
+#chart #numbers li span {
+  color: #333;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+#chart #bars {
+  display: block;
+  /*background: white;*/
+  width: 100vh;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid white;
+  /*box-shadow: 0 0 0 1px #444;*/
+}
+#chart #bars li {
+  display: table-cell;
+  width: 100px;
+  height: 300px;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  padding: 5px;
+}
+#chart #bars li .bar {
+  display: block;
+  width: 45px;
+  /*margin-left: 15px;*/
+  background: #2e4d50;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+#chart #bars li .bar:hover {
+  background: #ff3d00;
+  cursor: pointer;
+}
+#chart #bars li:hover .bar{
+  background: #ff3d00;
+  cursor: pointer;
+}
+#chart #bars li .bar:before {
+  color: white;
+  content: attr(data-percentage) '%';
+  position: relative;
+  top: 0px;
+}
+#chart #bars li span {
+  color: #333;
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: left;
+}
+
+.real-val {
+  opacity: 0;
+}
+#chart #bars li:hover .real-val {
+  opacity: 1;
+  position: absolute;
+  background: white;
+  display: inline-table;
+  padding: 5px;
+  box-shadow: 0 2px 5px;
+}
+
+/*
+----------------------------------
+PIES PIES PIES PIES PIES PIES PIES
+----------------------------------
+*/
+
+aside {
+  float: left;
+  margin-right: 100px;
+}
+.chart {
+  margin-bottom:0;
+  margin-top:0;
+}
+.vert > canvas, .vert > ol {
+  display:inline-block
+}
+.horiz > li {
+  display: inline;
+  padding-right: 20px;
+}
+.legend {
+  vertical-align:top;
+  padding-left:15px;
+  list-style: none;
+}
+.key {
+  position:relative;
+}
+.key:before {
+  content:"";
+  position:absolute;
+  top:35%;
+  left:-15px;
+  width:10px;
+  height:10px;
+}
+.s1:before{background:rgba(236, 208, 120, 0.7)}
+.s2:before{background:rgba(217, 91, 67, 0.7)}
+.s3:before{background:rgba(192, 41, 66, 0.7)}
+.s4:before{background:rgba(84, 36, 55, 0.7)}
+.s5:before{background:rgba(83, 119, 122, 0.7)}
+.s6:before{background:rgba(119, 146, 174, 0.7)}
+.s7:before{background:rgba(244, 67, 54, 0.7)}
+.s8:before{background:rgba(233, 30, 99, 0.7)}
+.s9:before{background:rgba(156, 39, 176, 0.7)}
+.s10:before{background:rgba(96, 125, 139, 0.7)}
+.s11:before{background:rgba(255, 87, 34, 0.7)}
+.s12:before{background:rgba(255, 152, 0, 0.7)}
+.s13:before{background:rgba(255, 235, 59, 0.7)}
+.s14:before{background:rgba(205, 220, 57, 0.7)}
+.s15:before{background:rgba(0, 150, 136, 0.7)}
+.s16:before{background:rgba(0, 188, 212, 0.7)}
+.s17:before{background:rgba(121, 85, 72, 0.7)}
+.s18:before{background:rgba(59, 255, 94, 0.7)}
+.s19:before{background:rgba(205, 220, 57, 0.7)}
+.s20:before{background:rgba(244, 59, 255, 0.7)}
+.s21:before{background:rgba(255, 133, 59, 0.7)}
+.s22:before{background:rgba(63, 81, 181, 0.7)}
+.s23:before{background:rgba(84, 153, 68, 0.7)}
+.s24:before{background:rgba(150, 152, 68, 0.7)}
+.s25:before{background:rgba(152, 68, 90, 0.7)}
