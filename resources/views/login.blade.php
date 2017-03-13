@@ -1,6 +1,6 @@
 @extends('template.main')
 
-@section('title') Jimbes Printing @stop
+@section('title') Victorious Conquerors @stop
 
 @section('content') 
     

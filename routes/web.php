@@ -11,6 +11,15 @@
 |
 */
 
+
+
+	
+
+Auth::routes();
+
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
+
+
+Route::get('/disciples', 'DiscipleController@index');
