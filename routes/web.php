@@ -24,3 +24,6 @@ Route::get('/', function () {
 //disciples
 Route::get('/disciples', 'DiscipleController@index');
 Route::get('/add-disciple', 'DiscipleController@createView');
+Route::post('/add-disciple', 'DiscipleController@create');
+Route::post('/delete-disciple', 'DiscipleController@delete');
+Route::get('/view-disciple/{id}', 'DiscipleController@view');

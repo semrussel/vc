@@ -19,12 +19,13 @@ class CreateDisciplesTable extends Migration
             $table->string('lastName');
             $table->string('nickName');
             $table->string('gender');
-            $table->string('address');
-            $table->string('school');
-            $table->string('company');
+            $table->string('address')->nullable();
+            $table->string('school')->nullable();
+            $table->string('company')->nullable();
             $table->date('phyBirth');
             $table->string('contactNo');
-            $table->string('picture');
+            $table->string('cStatus');
+            $table->string('picture')->nullable();
             $table->date('spiBirth');
             $table->string('process');
             $table->string('bapt')->default('NO');

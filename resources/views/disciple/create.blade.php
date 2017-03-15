@@ -1,25 +1,31 @@
 @extends('layouts.app')
 
 @section('main-content')
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#cellLeader").select2();
+  });
+</script>
 <div class="container-fluid spark-screen">
     <div class="row">
         <div class="col-xs-12">
           <div class="col-xs-12 dash-title"><h3>Add Disciple</h3></div>
-          <form>
+          <form action="{{ url('/add-disciple') }}" method="POST" enctype="multipart/form-data">
+            {!! csrf_field() !!}
             <div class="col-md-6 col-xs-12">
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Personal Information</h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body" style="padding-bottom: 25px;">
+                <div class="box-body" >
                   <div class="col-md-6 col-xs-12">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name">
+                    <input required type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name">
                   </div>
                   <div class="col-md-6 col-xs-12">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name">
+                    <input required type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name">
                   </div>
                   <div class="col-md-6 col-xs-12">
                     <label for="nickName">Nick Name</label>
@@ -46,16 +52,26 @@
                   </div>
                   <div class="col-md-6 col-xs-12">
                     <label for="contactNo">Contact Number</label>
-                    <input type="text" class="form-control" id="contactNo" name="contactNo" placeholder="Enter contact number">
+                    <input required type="text" class="form-control" id="contactNo" name="contactNo" placeholder="Enter contact number">
                   </div>
                   <div class="col-md-6 col-xs-12">
                     <label for="phyBirth">Birth Date</label>
                     <input type="date" class="form-control" id="phyBirth" name="phyBirth">
                   </div>
-                  <div class="col-xs-12">
-                    <label for="exampleInputFile">Upload Picture</label>
-                    <input type="file" id="exampleInputFile">
+                  <div class="col-md-6 col-xs-12">
+                    <label for="cStatus">Civil Status:</label>
+                    <select name="cStatus" id="cStatus" class="form-control">
+                      <option value="SINGLE">SINGLE</option>
+                      <option value="MARRIED">MARRIED</option>
+                      <option value="DIVORCED">DIVORCED</option>
+                      <option value="WIDOWED">WIDOWED</option>
+                    </select>
                   </div>
+                  <div class="col-md-6 col-xs-12">
+                    <label for="picture">Upload Picture</label>
+                    <input type="file" name="picture" id="picture">
+                  </div>
+                  
                 </div>
                 <!-- /.box-body -->
               </div>
@@ -67,7 +83,7 @@
                   <h3 class="box-title">Spiritual Information</h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
+                <div class="box-body" style="padding-bottom: 25px;">
                   <div class="col-xs-12">
                     <label for="process">Under What Process:</label>
                     <select name="process" id="process" class="form-control">
@@ -111,7 +127,11 @@
                   </div>
                   <div class="col-xs-12">
                     <label for="cellLeader">Cell Leader</label>
-                    <input type="text" name="cellLeader" id="cellLeader" class="form-control">
+                    <select name="cellLeader" id="cellLeader" class="form-control">
+                      @foreach($disciples as $disciple)
+                        <option value="{{ $disciple->id }}">{{ $disciple->firstName }} {{ $disciple->lastName }}</option>
+                      @endforeach
+                    </select>
                   </div>
                 </div>
                 <!-- /.box-body -->

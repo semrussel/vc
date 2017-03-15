@@ -30,7 +30,7 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="skin-blue sidebar-mini">
-<div id="app">
+<div id="app" style="height:100%;">
     <div class="wrapper">
 
     @include('layouts.partials.mainheader')

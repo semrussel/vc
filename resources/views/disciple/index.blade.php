@@ -30,9 +30,13 @@
                                 <td>{{ $disciple->process }}</td>
                                 <td>{{ $disciple->spiStatus }}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-xs">View</button>
+                                    <a href="{{ url('/view-disciple/'.$disciple->id) }}" class="btn btn-primary btn-xs">View</a>
                                     <button class="btn btn-info btn-xs">Edit</button>
-                                    <button class="btn btn-danger btn-xs">Delete</button>
+                                    <form action="{{ url('/delete-disciple') }}" method="POST" style="display: -webkit-inline-box;">
+                                        {!! csrf_field() !!}
+                                        <input type="hidden" name="id" value="{{ $disciple->id }}">
+                                        <input type="submit" value="Delete" class="btn btn-danger btn-xs">
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -45,5 +49,10 @@
     </div><!-- /.row -->
 
 </div>
-
+@if(isset($_GET['successAdd']))
+<script>alert('Successfully Added a new disciple!'); </script>
+@endif
+@if(isset($_GET['successDelete']))
+<script>alert('Successfully Deleted a disciple!'); </script>
+@endif
 @endsection
