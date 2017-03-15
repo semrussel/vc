@@ -18,20 +18,18 @@ class CreateDisciplesTable extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('nickName');
+            $table->string('gender');
             $table->string('address');
-            $table->date('phyBirth');
-            $table->date('spiBirth');
             $table->string('school');
             $table->string('company');
-            $table->string('saved')->default('NO');
-            $table->string('pre_enc')->default('NO');
-            $table->string('enc')->default('NO');
-            $table->string('post_enc')->default('NO');
-            $table->string('solOne')->default('NO');
-            $table->string('solTwo')->default('NO');
-            $table->string('solThree')->default('NO');
+            $table->date('phyBirth');
+            $table->string('contactNo');
+            $table->string('picture');
+            $table->date('spiBirth');
+            $table->string('process');
             $table->string('bapt')->default('NO');
-            $table->string('isFirstGen');            
+            $table->string('isFirstGen');
+            $table->string('spiStatus');            
             $table->timestamps();
         });
     }

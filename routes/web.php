@@ -21,5 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//disciples
 Route::get('/disciples', 'DiscipleController@index');
+Route::get('/add-disciple', 'DiscipleController@createView');

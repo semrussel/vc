@@ -72,26 +72,12 @@
                     </div>
                 </form>
 
-                @include('adminlte::auth.partials.social_login')
-
-                <a href="{{ url('/login') }}" class="text-center">{{ trans('adminlte_lang::message.membreship') }}</a>
             </div><!-- /.form-box -->
         </div><!-- /.register-box -->
     </div>
 
     @include('adminlte::layouts.partials.scripts_auth')
 
-    @include('adminlte::auth.terms')
-
-    <script>
-        $(function () {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
-        });
-    </script>
 
 </body>
 

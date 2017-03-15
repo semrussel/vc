@@ -1,15 +1,13 @@
-@extends('template.main')
+@extends('layouts.app')
 
-@section('content')
-<div class="col-md-10 col-md-offset-2 dash-main">
-
+@section('main-content')
+<div class="container-fluid spark-screen">
     <div class="row">
         <div class="col-xs-12">
-
-            <p class="col-xs-10 dash-title"><b>Disciples</b></p>
-            <p class="col-xs-2 dash-title" style="margin-top: 10px;">
-                <a class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
-            </p>
+            <div class="col-xs-11 dash-title"><h3>Disciple</h3></div>
+            <div class="col-xs-1 dash-title" style="margin-top: 10px;">
+                <a href="{{ url('/add-disciple') }}" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+            </div>
 
             <div class="col-xs-12">
                 <table id="disciple-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
@@ -18,18 +16,26 @@
                             <th>Disciple ID</th>
                             <th>Full Name</th>
                             <th>Nick Name</th>
+                            <th>Process</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @for($i=0; $i<15; $i++)
+                       @foreach($disciples as $disciple)
                             <tr>
-                                <td>{{ $i+1 }}</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
+                                <td>{{ $disciple->id }}</td>
+                                <td>{{ $disciple->firstName }} {{ $disciple->lastName }}</td>
+                                <td>{{ $disciple->nickName }}</td>
+                                <td>{{ $disciple->process }}</td>
+                                <td>{{ $disciple->spiStatus }}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-xs">View</button>
+                                    <button class="btn btn-info btn-xs">Edit</button>
+                                    <button class="btn btn-danger btn-xs">Delete</button>
+                                </td>
                             </tr>
-                        @endfor
+                        @endforeach
                     </tbody>
                 </table>
             </div>

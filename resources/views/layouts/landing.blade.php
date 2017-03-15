@@ -18,6 +18,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x314.png" />
     <meta property="og:sitename" content="demo.adminlte.acacha.org" />
     <meta property="og:url" content="http://demo.adminlte.acacha.org" />
+    <link href="{{ url('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@acachawiki" />
@@ -74,53 +75,39 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-12">
-                        <h1><b>Victorious Conquerors Discipleship System</b></h1>
-                        <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3>
+                        <h1 style="font-size:106px"><b>Victorious Conquerors Discipleship System</b></h1>
+                        <br>
+                        <div class="col-lg-2">
+                            <h3><b>WIN</b></h3>
+                        </div>
+                        <div class="col-lg-1">
+                            <h3><b><i class="fa fa-arrow-right" aria-hidden="true"></i></b></h3>
+                        </div>
+                        <div class="col-lg-3">
+                            <h3><b>CONSOLIDATE</b></h3>
+                        </div>
+                        <div class="col-lg-1">
+                            <h3><b><i class="fa fa-arrow-right" aria-hidden="true"></i></b></h3>
+                        </div>
+                        <div class="col-lg-2">
+                            <h3><b>DISCIPLE</b></h3>
+                        </div>
+                        <div class="col-lg-1">
+                            <h3><b><i class="fa fa-arrow-right" aria-hidden="true"></i></b></h3>
+                        </div>
+                        <div class="col-lg-2">
+                            <h3><b>SEND</b></h3>
+                        </div>
                     </div>
-                    <div class="col-lg-12">
-                        <p></p>
+                    <div class="col-lg-12" style="margin-bottom:50px;">
+                        <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3>
                     </div>
                 </div>
             </div> <!--/ .container -->
         </div><!--/ #headerwrap -->
     </section>
 
-    <section id="contact" name="contact">
-        <div id="footerwrap">
-            <div class="container">
-                <div class="col-lg-5">
-                    <h3>{{ trans('adminlte_lang::message.address') }}</h3>
-                    <p>
-                        Av. Greenville 987,<br/>
-                        New York,<br/>
-                        90873<br/>
-                        United States
-                    </p>
-                </div>
-
-                <div class="col-lg-7">
-                    <h3>{{ trans('adminlte_lang::message.dropus') }}</h3>
-                    <br>
-                    <form role="form" action="#" method="post" enctype="plain">
-                        <div class="form-group">
-                            <label for="name1">{{ trans('adminlte_lang::message.yourname') }}</label>
-                            <input type="name" name="Name" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="email1">{{ trans('adminlte_lang::message.emailaddress') }}</label>
-                            <input type="email" name="Mail" class="form-control" id="email1" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
-                        </div>
-                        <div class="form-group">
-                            <label>{{ trans('adminlte_lang::message.yourtext') }}</label>
-                            <textarea class="form-control" name="Message" rows="3"></textarea>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-large btn-success">{{ trans('adminlte_lang::message.submit') }}</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <footer>
         <div id="c">
             <div class="container">

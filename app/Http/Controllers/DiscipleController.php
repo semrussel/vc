@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Disciple;
 
 class DiscipleController extends Controller
 {
@@ -13,6 +14,14 @@ class DiscipleController extends Controller
 
     public function index()
     {
-        return view('disciple.index');
+    	$disciples = Disciple::all();
+
+        return view('disciple.index')->with('disciples',$disciples);
+    }
+
+    public function createView()
+    {
+
+        return view('disciple.create');
     }
 }
