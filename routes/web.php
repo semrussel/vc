@@ -27,3 +27,6 @@ Route::get('/add-disciple', 'DiscipleController@createView');
 Route::post('/add-disciple', 'DiscipleController@create');
 Route::post('/delete-disciple', 'DiscipleController@delete');
 Route::get('/view-disciple/{id}', 'DiscipleController@view');
+
+//connections
+Route::get('/connections', 'ConnectionController@index');

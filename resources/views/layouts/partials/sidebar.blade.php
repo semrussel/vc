@@ -25,7 +25,7 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li><a href="{{ url('/disciples') }}"><i class='fa fa-users'></i> <span>Disciples</span></a></li>
-            <li><a href="{{ url('/disciples') }}"><i class='fa fa-link'></i> <span>Connections</span></a></li>
+            <li><a href="{{ url('/connections') }}"><i class='fa fa-link'></i> <span>Connections</span></a></li>
             <!--<li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

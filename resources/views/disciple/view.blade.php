@@ -20,12 +20,9 @@
                 <li class="list-group-item">
                   <b>Following</b> <a class="pull-right">543</a>
                 </li>
-                <li class="list-group-item">
-                  <b>Friends</b> <a class="pull-right">13,287</a>
-                </li>
               </ul>
 
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              <a href="#" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -40,33 +37,39 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> School</strong>
-              <p class="text-muted">{{ $disciple->school }}</p>
+              <div class="col-md-4 col-xs-12">
+                <strong><i class="fa fa-book margin-r-5"></i> School</strong>
+                <p class="text-muted">{{ $disciple->school }}</p>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <strong><i class="fa fa-suitcase margin-r-5"></i> Company</strong>
+                <p class="text-muted">{{ $disciple->company }}</p>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <strong><i class="fa fa-birthday-cake margin-r-5"></i> Birthday</strong>
+                <p class="text-muted">{{ $disciple->phyBirth }}</p>
+              </div>
+              <div class="clear"></div>
               <hr>
-
-              <strong><i class="fa fa-suitcase margin-r-5"></i> Company</strong>
-              <p class="text-muted">{{ $disciple->company }}</p>
+              <div class="col-xs-12">
+                <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
+                <p class="text-muted">{{ $disciple->address }}</p>
+              </div>
+              <div class="clear"></div>
               <hr>
+              <div class="col-md-4 col-xs-12">
+                <strong><i class="fa fa-phone margin-r-5"></i> Contact Number</strong>
+                <p class="text-muted">{{ $disciple->contactNo }}</p>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <strong><i class="fa fa-intersex margin-r-5"></i> Gender</strong>
+                <p class="text-muted">{{ $disciple->gender }}</p>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <strong><i class="fa fa-file-o margin-r-5"></i> Civil Status</strong>
+                <p class="text-muted">{{ $disciple->cStatus }}</p>
+              </div>
 
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
-              <p class="text-muted">{{ $disciple->address }}</p>
-              <hr>
-
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-              <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
-              </p>
-
-              <hr>
-
-              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
             </div>
             <!-- /.box-body -->
           </div>
@@ -81,33 +84,33 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> School</strong>
-              <p class="text-muted">{{ $disciple->school }}</p>
+              <div class="col-md-6 col-xs-12">
+                <strong><i class="fa fa-birthday-cake margin-r-5"></i> Spiritual Birthday</strong>
+                <p class="text-muted">{{ $disciple->spiBirth }}</p>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <strong><i class="fa fa-tint margin-r-5"></i> Spiritual Status</strong>
+                <p class="text-muted">{{ $disciple->spiStatus }}</p>
+              </div>
+              <div class="clear"></div>
               <hr>
 
-              <strong><i class="fa fa-suitcase margin-r-5"></i> Company</strong>
-              <p class="text-muted">{{ $disciple->company }}</p>
+              <div class="col-xs-12">
+                <strong><i class="fa fa-gears margin-r-5"></i> Process</strong>
+                <p class="text-muted">{{ $disciple->process }}</p>
+              </div>
+              <div class="clear"></div>
               <hr>
 
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
-              <p class="text-muted">{{ $disciple->address }}</p>
-              <hr>
-
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-              <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
-              </p>
-
-              <hr>
-
-              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              <div class="col-md-6 col-xs-12">
+                <strong><i class="fa fa-tint margin-r-5"></i> Is baptized?</strong>
+                <p class="text-muted">{{ $disciple->bapt }}</p>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <strong><i class="fa fa-tint margin-r-5"></i> Is FirstGen Christian?</strong>
+                <p class="text-muted">{{ $disciple->isFirstGen }}</p>
+              </div>
+              <div class="clear"></div>
             </div>
             <!-- /.box-body -->
           </div>
@@ -395,10 +398,4 @@
         <!-- /.col -->
     </div>
 </div>
-@if(isset($_GET['successAdd']))
-<script>alert('Successfully Added a new disciple!'); </script>
-@endif
-@if(isset($_GET['successDelete']))
-<script>alert('Successfully Deleted a disciple!'); </script>
-@endif
 @endsection
