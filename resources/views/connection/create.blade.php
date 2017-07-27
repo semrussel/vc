@@ -9,14 +9,14 @@
     <div class="row">
       <div class="box">
         <div class="box-header with-border">
-          <div class="col-md-12">Search Cell Group </div>
+          <div class="col-md-12">Create connection for {{ getNickName($id) }}'s cell group</div>
         </div>
         <div class="box-body">
-          <form action="{{ url('connections') }}" method="POST">
+          <form action="{{ url('/connections/add/'.$id) }}" method="POST">
             {!! csrf_field() !!}
             <div class="form-group">
-              <label>Select Cell Leader:</label>
-              <select name="cellLeader" class="form-control select2">
+              <label>Select Cell Member:</label>
+              <select class="form-control select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;" name="cellMember[]">
                 @foreach($disciples as $disple)
                   <option value="{{ $disple->id }}">{{ getFullName($disple->id) }}</option>
                 @endforeach
@@ -28,8 +28,5 @@
       </div>
     </div>
 </div>
-@if(isset($_GET['successAdd']))
-<script>alert('Successfully Added a new Connection!'); </script>
-@endif
 <script> $('.select2').select2(); </script>
 @endsection  

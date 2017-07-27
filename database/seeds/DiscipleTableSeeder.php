@@ -28,7 +28,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->process = 'POST ENCOUNTER';
         $disciple->bapt = 'YES';
         $disciple->isFirstGen = 'NO';
-        $disciple->spiStatus = 'ON-FIRE';
+        $disciple->spiStatus = 'ON FIRE';
         $disciple->save();
 
         $disciple = new Disciple();
@@ -47,7 +47,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->process = 'POST ENCOUNTER';
         $disciple->bapt = 'YES';
         $disciple->isFirstGen = 'NO';
-        $disciple->spiStatus = 'ON-FIRE';
+        $disciple->spiStatus = 'ON FIRE';
         $disciple->save();
 
         $disciple = new Disciple();
@@ -57,7 +57,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->gender = 'MALE';
         $disciple->address = 'Morong, Rizal';
         $disciple->school = 'FEU';
-        $disciple->company = 'TV5';
+        $disciple->company = 'Yondu Inc.';
         $disciple->phyBirth = date('1992-09-08');
         $disciple->contactNo = '09364582490';
         $disciple->cStatus = 'SINGLE';
@@ -66,7 +66,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->process = 'POST ENCOUNTER';
         $disciple->bapt = 'YES';
         $disciple->isFirstGen = 'NO';
-        $disciple->spiStatus = 'ON-FIRE';
+        $disciple->spiStatus = 'ON FIRE';
         $disciple->save();
 
         $disciple = new Disciple();
@@ -85,7 +85,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->process = 'POST ENCOUNTER';
         $disciple->bapt = 'YES';
         $disciple->isFirstGen = 'NO';
-        $disciple->spiStatus = 'ON-FIRE';
+        $disciple->spiStatus = 'ON FIRE';
         $disciple->save();
 
         $disciple = new Disciple();
@@ -104,7 +104,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->process = 'POST ENCOUNTER';
         $disciple->bapt = 'YES';
         $disciple->isFirstGen = 'YES';
-        $disciple->spiStatus = 'ON-FIRE';
+        $disciple->spiStatus = 'ON FIRE';
         $disciple->save();
 
         $disciple = new Disciple();
@@ -114,7 +114,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->gender = 'FEMALE';
         $disciple->address = 'Morong, Rizal';
         $disciple->school = 'URS';
-        $disciple->company = "NONE";
+        $disciple->company = "Quenn Mary School";
         $disciple->phyBirth = date('1992-03-05');
         $disciple->contactNo = '09753731362';
         $disciple->cStatus = 'SINGLE';
@@ -123,7 +123,7 @@ class DiscipleTableSeeder extends Seeder
         $disciple->process = 'POST ENCOUNTER';
         $disciple->bapt = 'YES';
         $disciple->isFirstGen = 'YES';
-        $disciple->spiStatus = 'ON-FIRE';
+        $disciple->spiStatus = 'ON FIRE';
         $disciple->save();
 
 

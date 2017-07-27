@@ -22,7 +22,7 @@
                 </li>
               </ul>
 
-              <a href="#" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
+              <a href="{{ url('disciple/edit/'.$disciple->id) }}" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
             </div>
             <!-- /.box-body -->
           </div>

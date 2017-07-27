@@ -26,7 +26,7 @@ class CreateDisciplesTable extends Migration
             $table->string('contactNo');
             $table->string('cStatus');
             $table->string('picture')->nullable();
-            $table->date('spiBirth');
+            $table->date('spiBirth')->nullable();
             $table->string('process');
             $table->string('bapt')->default('NO');
             $table->string('isFirstGen');

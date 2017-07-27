@@ -9,6 +9,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('layouts.partials.htmlheader')
 @show
 
+@yield('css-per-page')
+
 <!--
 BODY TAG OPTIONS:
 =================
