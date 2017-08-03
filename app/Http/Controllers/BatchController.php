@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Disciple;
-use App\Batch;
-use App\PivotDiscipleBatch;
+use App\Models\Http\Requests;
+use App\Models\Disciple;
+use App\Models\Batch;
+use App\Models\PivotDiscipleBatch;
 use Illuminate\Support\Facades\DB;
 
 class BatchController extends Controller
@@ -83,6 +83,17 @@ class BatchController extends Controller
             }
         }
 
-        return redirect('/batch')->with('message','edited Batch: '.$batch->name);
+        return redirect('/batch/edit/'.$id)->with('message','edited Batch: '.$batch->name);
+    }
+
+    public function view($id)
+    {
+        $edit_data = Batch::find($id);
+        $disciples = DB::table('disciples')
+        ->leftJoin('pivot_disciple_batch','disciples.id','=','pivot_disciple_batch.disciple_id')
+        ->whereNull('pivot_disciple_batch.disciple_id')->select('disciples.id')->get(); 
+        $pivots = PivotDiscipleBatch::where('batch_id',$id)->get();
+
+        return view('batch.view')->with('edit_data',$edit_data)->with('pivots',$pivots)->with('disciples',$disciples);
     }
 }

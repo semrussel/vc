@@ -2,6 +2,7 @@
 
 @section('htmlheader_title')
     Victorious Conquerors Dashboard
+    <?php $active = 'dashboard'; ?>
 @endsection
 
 @section('contentheader_title')

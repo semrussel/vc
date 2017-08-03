@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
+@section('htmlheader_title')
+    <?php $active = 'disciples'; ?>
+@endsection
+
 @section('main-content')
 <div class="container-fluid spark-screen">
     <div class="row">
         <div class="col-xs-12">
             @include('errors.status-session')
-            <div class="col-xs-11 dash-title"><h3>Disciples</h3></div>
+            <div class="col-xs-11 dash-title"><h3>Disciples List</h3></div>
             <div class="col-xs-1 dash-title" style="margin-top: 10px;">
-                <a href="{{ url('/add-disciple') }}" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+                <a href="{{ url('/disciple/add') }}" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
             </div>
 
             <div class="col-xs-12">
@@ -31,9 +35,9 @@
                                 <td>{{ $disciple->process }}</td>
                                 <td>{{ $disciple->spiStatus }}</td>
                                 <td>
-                                    <a href="{{ url('/view-disciple/'.$disciple->id) }}" class="btn btn-primary btn-xs">View</a>
+                                    <a href="{{ url('/disciple/view/'.$disciple->id) }}" class="btn btn-primary btn-xs">View</a>
                                     <a href="{{ url('/disciple/edit/'.$disciple->id) }}" class="btn btn-info btn-xs">Edit</a>
-                                    <form action="{{ url('/delete-disciple') }}" method="POST" style="display: -webkit-inline-box;">
+                                    <form action="{{ url('/disciple/delete') }}" method="POST" style="display: -webkit-inline-box;">
                                         {!! csrf_field() !!}
                                         <input type="hidden" name="id" value="{{ $disciple->id }}">
                                         <input type="submit" value="Delete" class="btn btn-danger btn-xs">

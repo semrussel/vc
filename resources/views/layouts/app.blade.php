@@ -57,6 +57,7 @@ desired effect
 </div>
 @section('scripts')
     @include('layouts.partials.scripts')
+    @stack('scripts')
 @show
 
 </body>

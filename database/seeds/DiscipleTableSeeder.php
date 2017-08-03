@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Disciple;
+use App\Models\Disciple;
 
 class DiscipleTableSeeder extends Seeder
 {

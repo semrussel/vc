@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Connection;
-use App\Disciple;
-use App\Http\Requests;
+use App\Models\Connection;
+use App\Models\Disciple;
+use App\Models\Http\Requests;
 
 class ConnectionController extends Controller
 {

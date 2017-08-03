@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('htmlheader_title')
+    <?php $active = 'connections'; ?>
+@endsection
+
 @section('css-per-page')
   <link href="{{ url('css/tree.css') }}" rel="stylesheet">
 @endsection
@@ -20,7 +24,7 @@
           <div class="tree">
             <ul>
               <li>
-                <a href="{{ url('/connections?id='.$id) }}">{{ getFullName($id) }}</a>
+                <a href="{{ url('/connections/'.$id) }}">{{ getFullName($id) }}</a>
                 @if(count($connections) != 0)
                   <ul>
                     @foreach($connections as $connection)

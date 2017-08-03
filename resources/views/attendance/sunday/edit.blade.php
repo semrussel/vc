@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    <?php $active = 'batch'; ?>
+    <?php $active = 'sunday'; ?>
 @endsection
 
 @section('main-content')
@@ -13,18 +13,14 @@
         </div>
         <div class="box-body">
           @include('errors.status-session')
-          <form action="{{ url('/batch/edit/'.$edit_data->id) }}" method="POST">
+          <form action="{{ url('/attendance/sunday-service/edit/'.$edit_data->id) }}" method="POST">
             {!! csrf_field() !!}
             <div class="form-group">
-              <label>Batch name:</label>
-              <input value="{{ $edit_data->name }}" type="text" class="form-control" placeholder="Enter batch name" name="name">
+              <label>Date:</label>
+              <input value="{{ $edit_data->date }}" type="date" class="form-control" disabled>
             </div>
             <div class="form-group">
-              <label>Bible Verse:</label>
-              <input value="{{ $edit_data->bibleVerse }}" type="text" class="form-control" placeholder="Enter bible verse" name="bibleVerse">
-            </div>
-            <div class="form-group">
-              <label>Select additional disciple:</label>
+              <label>Select additional attenders:</label>
               <select class="form-control select2" multiple="multiple" data-placeholder="Select disciple" style="width: 100%;" name="disciples[]">
                 @foreach($disciples as $disple)
                   <option value="{{ $disple->id }}">{{ getFullName($disple->id) }}</option>
@@ -34,7 +30,7 @@
             <table id="disciple-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th>Batch Members</th>
+                  <th>List of Attenders</th>
                 </tr>
               </thead>
               <tbody>
@@ -46,7 +42,7 @@
               </tbody>
             </table>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="{{ url('/batch') }}" class="btn btn-default">Cancel</a>
+            <a href="{{ url('/attendance/sunday-service') }}" class="btn btn-default">Cancel</a>
           </form>
         </div>
       </div>

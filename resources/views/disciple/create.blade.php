@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('htmlheader_title')
+    <?php $active = 'disciples'; ?>
+@endsection
+
 @section('main-content')
 <script type="text/javascript">
   $(document).ready(function() {
@@ -10,7 +14,7 @@
     <div class="row">
         <div class="col-xs-12">
           <div class="col-xs-12 dash-title"><h3>Add Disciple</h3></div>
-          <form action="{{ url('/add-disciple') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ url('/disciple/add') }}" method="POST" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="col-md-6 col-xs-12">
               <div class="box box-primary">

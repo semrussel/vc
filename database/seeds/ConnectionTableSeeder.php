@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Connection;
+use App\Models\Connection;
 
 class ConnectionTableSeeder extends Seeder
 {

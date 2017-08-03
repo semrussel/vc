@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('htmlheader_title')
+    <?php $active = 'disciples'; ?>
+@endsection
+
 @section('main-content')
 <div class="container-fluid spark-screen">
     <div class="row">

@@ -1,35 +1,41 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    <?php $active = 'connections'; ?>
+    <?php $active = 'events'; ?>
 @endsection
 
 @section('main-content')
 <div class="container-fluid spark-screen">
     <div class="row">
         <div class="col-xs-12">
-            <div class="col-xs-11 dash-title"><h3>{{ getNickName($id) }}'s  disciples</h3></div>
+            @include('errors.status-session')
+            <div class="col-xs-11 dash-title"><h3>Events List</h3></div>
             <div class="col-xs-1 dash-title" style="margin-top: 10px;">
-                <a href="{{ url('/connections/add/'.$id) }}" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+                <a href="{{ url('/add-batch') }}" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
             </div>
 
             <div class="col-xs-12">
                 <table id="disciple-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Full Name</th>
+                            <th>Events ID</th>
+                            <th>Event name</th>
+                            <th>Bible verse</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach($connections as $connection)
+                       @foreach($batches as $batch)
                             <tr>
-                                <td>{{ getFullName($connection->disciple_id) }}</td>
+                                <td>{{ $batch->id }}</td>
+                                <td>{{ $batch->name }}</td>
+                                <td>{{ $batch->bibleVerse }}</td>
                                 <td>
-                                    <form action="{{ url('/delete-connection') }}" method="POST" style="display: -webkit-inline-box;">
+                                    <a href="{{ url('/batch/'.$batch->id) }}" class="btn btn-primary btn-xs">View</a>
+                                    <a href="{{ url('/batch/edit/'.$batch->id) }}" class="btn btn-info btn-xs">Edit</a>
+                                    <form action="{{ url('/delete-batch') }}" method="POST" style="display: -webkit-inline-box;">
                                         {!! csrf_field() !!}
-                                        <input type="hidden" name="id" value="{{ $connection->id }}">
-                                        <input type="hidden" name="discipler_id" value="{{ $connection->discipler_id }}">
+                                        <input type="hidden" name="id" value="{{ $batch->id }}">
                                         <input type="submit" value="Delete" class="btn btn-danger btn-xs">
                                     </form>
                                 </td>

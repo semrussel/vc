@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Batch;
+use App\Models\Batch;
 
 class BatchTableSeeder extends Seeder
 {

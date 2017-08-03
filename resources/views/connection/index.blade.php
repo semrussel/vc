@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('htmlheader_title')
+    <?php $active = 'connections'; ?>
+@endsection
+
 @section('css-per-page')
   <link href="{{ url('css/tree.css') }}" rel="stylesheet">
 @endsection

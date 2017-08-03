@@ -7,15 +7,13 @@
     <link href="{{ url('css/jb-printing.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.css"/>
-    <script src="{{ url('js/jquery.js') }}"></script>
     <link rel="stylesheet" href="{{ url('css/AdminLTE.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/skins/_all-skins.min.css') }}">
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>
-    <link href="{{ url('css/select2.min.css') }}" rel="stylesheet" />
-    <script src="{{ url('js/select2.min.js') }} "></script>
+    
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
