@@ -16,6 +16,7 @@ class CreateProcessTable extends Migration
         Schema::create('process', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('batch_id')->references('id')->on('batch')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('level');
             $table->date('startDate');
             $table->date('endDate')->nullable();         
             $table->timestamps();

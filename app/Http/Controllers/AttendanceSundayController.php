@@ -8,7 +8,7 @@ use App\Models\Disciple;
 use App\Models\PivotDiscipleAttendance;
 use Illuminate\Support\Facades\DB;
 
-class SundayAttendanceController extends Controller
+class AttendanceSundayController extends Controller
 {
     public function __construct()
     {
@@ -60,12 +60,27 @@ class SundayAttendanceController extends Controller
     {
 
     	$edit_data = Attendance::find($id);
-        $disciples = DB::table('disciples')
-        	->leftJoin('pivot_disciple_attendances','disciples.id','=','pivot_disciple_attendances.disciple_id')
-        	->whereNull('pivot_disciple_attendances.disciple_id')->select('disciples.id')->get();
-        $pivots = PivotDiscipleAttendance::where('attendance_id',$id)->get();
+        $pivots = PivotDiscipleAttendance::where('attendance_id',$id)->select('disciple_id')->get();
+        $disciples = DB::table('disciples')->whereNotIn('id',$pivots)->select('disciples.id')->get();
+
+        
 
     	return view('attendance.sunday.edit')->with('edit_data',$edit_data)->with('pivots',$pivots)->with('disciples',$disciples);
+    }
+
+    public function edit(Request $request,$id)
+    {
+
+        if (count($request->disciples) != 0) {
+            for ($i=0; $i < count($request->disciples); $i++) { 
+                $pivot = new PivotDiscipleAttendance();
+                $pivot->attendance_id = $id;
+                $pivot->disciple_id = $request->disciples[$i];
+                $pivot->save(); 
+            }
+        }
+
+        return redirect('/attendance/sunday-service/edit/'.$id)->with('message','edited sunday service');
     }
 
     public function view($id)

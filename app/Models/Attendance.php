@@ -13,4 +13,11 @@ class Attendance extends Model
     public function scopeFindSunday($query,$id){
     	return $query->where( "type", "sunday" )->where( "id", $id );
     }
+
+    public function scopeCell($query){
+    	return $query->where( "type", "cell" );
+    }
+    public function scopeFindCell($query,$id){
+    	return $query->where( "type", "cell" )->where( "id", $id );
+    }
 }

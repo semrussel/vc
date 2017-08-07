@@ -21,4 +21,9 @@ function getFullNickName($id){
 	$disciple = DB::table('disciples')->where('id',$id)->get();
 	return $disciple[0]->nickName.' '.$disciple[0]->lastName;
 }
+
+function getBatchName($id){
+	$name = DB::table('batch')->where('id',$id)->pluck('name');
+	return $name[0];
+}
 ?>

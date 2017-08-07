@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    <?php $active = 'sunday'; ?>
+    <?php $active = 'cell'; ?>
 @endsection
 
 @section('main-content')
@@ -9,21 +9,25 @@
     <div class="row">
       <div class="box">
         <div class="box-header with-border">
-          <div class="col-md-12">Edit {{ $edit_data->name }} Sunday Service - {{ $edit_data->date }}</div>
+          <div class="col-md-12">Edit {{ $edit_data->name }} cell meeting</div>
         </div>
         <div class="box-body">
           @include('errors.status-session')
-          <form action="{{ url('/attendance/sunday-service/edit/'.$edit_data->id) }}" method="POST">
+          <form action="{{ url('/attendance/cell/edit/'.$edit_data->id) }}" method="POST">
             {!! csrf_field() !!}
             <div class="form-group">
               <label>Date:</label>
               <input value="{{ $edit_data->date }}" type="date" class="form-control" disabled>
             </div>
             <div class="form-group">
+              <label>Cell leader:</label>
+              <input value="{{ getFullName($edit_data->cellLeader_id) }}" type="text" class="form-control" disabled>
+            </div>
+            <div class="form-group">
               <label>Select additional attenders:</label>
               <select class="form-control select2" multiple="multiple" data-placeholder="Select disciple" style="width: 100%;" name="disciples[]">
-                @foreach($disciples as $disple)
-                  <option value="{{ $disple->id }}">{{ getFullName($disple->id) }}</option>
+                @foreach($disciples as $disciple)
+                  <option value="{{ $disciple->id }}">{{ getFullName($disciple->id) }}</option>
                 @endforeach
               </select>
             </div>
@@ -42,7 +46,7 @@
               </tbody>
             </table>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="{{ url('/attendance/sunday-service') }}" class="btn btn-default">Cancel</a>
+            <a href="{{ url('/attendance/cell') }}" class="btn btn-default">Cancel</a>
           </form>
         </div>
       </div>

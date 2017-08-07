@@ -53,16 +53,28 @@ Route::post('/delete-pivot-disciple-batch', 'PivotDiscipleBatchController@delete
 
 //Delete Pivot data any in column
 Route::post('/pivot/delete', 'PivotDeleteController@delete');
-//Events
-Route::get('/events', 'EventController@index');
 
 //Sunday Attendance
-Route::get('/attendance/sunday-service', 'SundayAttendanceController@index');
-Route::get('/attendance/sunday-service/add', 'SundayAttendanceController@createView');
-Route::get('/attendance/sunday-service/{id}', 'SundayAttendanceController@view');
-Route::get('/attendance/sunday-service/edit/{id}', 'SundayAttendanceController@editView');
-Route::post('/attendance/sunday-service/edit/{id}', 'SundayAttendanceController@edit');
-Route::post('/attendance/sunday-service/add', 'SundayAttendanceController@create');
-Route::post('/attendance/sunday-service/delete', 'SundayAttendanceController@delete');
+Route::get('/attendance/sunday-service', 'AttendanceSundayController@index');
+Route::get('/attendance/sunday-service/add', 'AttendanceSundayController@createView');
+Route::get('/attendance/sunday-service/edit/{id}', 'AttendanceSundayController@editView');
+Route::post('/attendance/sunday-service/edit/{id}', 'AttendanceSundayController@edit');
+Route::get('/attendance/sunday-service/{id}', 'AttendanceSundayController@view');
+Route::post('/attendance/sunday-service/add', 'AttendanceSundayController@create');
+Route::post('/attendance/sunday-service/delete', 'AttendanceSundayController@delete');
 
 //Cell Group Attendance
+Route::get('/attendance/cell', 'AttendanceCellController@index');
+Route::get('/attendance/cell/add', 'AttendanceCellController@createView');
+Route::get('/attendance/cell/{id}', 'AttendanceCellController@view');
+Route::get('/attendance/cell/edit/{id}', 'AttendanceCellController@editView');
+Route::post('/attendance/cell/edit/{id}', 'AttendanceCellController@edit');
+Route::post('/attendance/cell/add', 'AttendanceCellController@create');
+Route::post('/attendance/cell/delete', 'AttendanceCellController@delete');
+
+//Cell Group Attendance
+Route::get('/attendance/process/{process}', 'AttendanceProcessController@index');
+Route::post('/attendance/process/{process}/delete', 'AttendanceProcessController@delete');
+
+//Events
+Route::get('/events', 'EventController@index');
